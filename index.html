@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/hellokittysprite3.png" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Decorative floating background elements -->
+  <div class="bg-elements">
+    <!-- Clouds floating from right to left -->
+    <div class="floating cloud" style="top: 15%; right: 5%; animation-delay: 0s; animation-duration: 55s;"></div>
+    <div class="floating cloud" style="top: 65%; right: 10%; animation-delay: 1s; animation-duration: 60s;"></div>
+
+    <!-- Clouds floating from left to right -->
+    <div class="floating left-cloud" style="top: 35%; left: 5%; animation-delay: 1s; animation-duration: 50s;"></div>
+    <div class="floating left-cloud" style="top: 80%; left: 15%; animation-delay: 1s; animation-duration: 70s;"></div>
+
+    <!-- Sparkle elements -->
+    <div class="floating sparkle" style="top: 10%; right: 15%; animation-delay: 1s;"></div>
+    <div class="floating sparkle" style="top: 70%; left: 5%; animation-delay: 2s;"></div>
+
+    <!-- Wing elements -->
+    <div class="floating wings" style="top: 45%; right: 8%; animation-delay: 1s;"></div>
+    <div class="floating wings" style="top: 20%; left: 10%; animation-delay: 2s;"></div>
+  </div>
+
+  <!-- Weather effects container (rain, snow, sun rays) -->
+  <div id="weather-effects"></div>
+
+  <!-- Corner decorative images -->
+  <img src="assets/bird.png" alt="Corner decoration" class="corner-image">
+  <img src="assets/bird2.png" alt="Corner decoration" class="corner-image2">
+
+  <img src="assets/deer.png" alt="Corner decoration" class="corner-image3">
+  <img src="assets/zburator.png" alt="Corner decoration" class="corner-image4">
+
+  <!-- Main weather container -->
+  <div class="container">
+    <!-- Decorative butterfly positioned above the container -->
+    <img src="assets/butterfly.png" alt="Butterfly decoration" class="butterfly-image">
+
+    <!-- Title section -->
+    <h1 class="title">Weather</h1>
+
+    <!-- Search bar for manual city lookup -->
+    <div class="search-bar">
+      <input id="search-input" type="text" placeholder="Search for a city..." />
+      <button id="search-btn">Search</button>
+    </div>
+
+    <!-- Button to get location automatically -->
+    <div class="location-bar">
+      <button id="location-btn">
+        <i class="fa-solid fa-location-crosshairs"></i> Current Location
+      </button>
+    </div>
+
+    <!-- Loading spinner displayed while fetching data -->
+    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+      <div class="spinner"></div>
+      <p>Fetching weather...</p>
+    </div>
+
+    <!-- Error message for invalid searches or network issues -->
+    <p id="error" class="error"></p>
+
+    <!-- Weather information displayed after successful search -->
+    <div class="weather-info">
+      <div class="city-header">
+        <img id="weather-icon" class="weather-icon" src="" alt="Weather Icon" />
+        <h2 id="city-name"></h2>
+      </div>
+
+      <h3 id="temperature"></h3>
+      <p id="feels-like"></p>
+      <p id="humidity"></p>
+      <p id="wind"></p>
+    </div>
+
+    <!-- Icon bar with custom graphics -->
+    <div class="icon-bar">
+      <img src="assets/hellokittysprite3.png" alt="Sunny icon" class="icon">
+      <img src="assets/loveicon5.png" alt="Cloudy icon" class="icon">
+    </div>
+
+    <!-- Icon bar with Font Awesome weather icons -->
+    <div class="icon-bar">
+      <i class="fa-solid fa-sun"></i>
+      <i class="fa-solid fa-cloud"></i>
+      <i class="fa-solid fa-cloud-rain"></i>
+    </div>
+
+    <!-- Footer with data source -->
+    <footer>Data by OpenWeather</footer>
+  </div>
+
+  <!-- Main JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
